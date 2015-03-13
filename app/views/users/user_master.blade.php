@@ -21,7 +21,7 @@
 
     <br/>
     <div class="featured-text navbar-fixed-bottom">
-        <p class="lead center text-muted"><small>&copy; 2014 | All rights reserved! | UPLINK</small></p>
+        <p class="lead center text-muted"><small>&copy; 2014 | All rights reserved! | {{ $app_name }}</small></p>
     </div>
 
 @stop
