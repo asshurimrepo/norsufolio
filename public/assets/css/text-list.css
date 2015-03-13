@@ -99,7 +99,7 @@ body, .default-color {
 }
 
 body, .default-background-color {
-    background-color: #fff;
+    /*background-color: #fff;*/
 }
 
 table {

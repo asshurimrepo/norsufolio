@@ -75,7 +75,6 @@
 		 * */
 		Route::resource( 'user', 'UserController' );
 
-
 		/*
 		 * @route user/project
 		 * @uses ProjectsController

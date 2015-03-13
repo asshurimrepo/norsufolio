@@ -23,11 +23,10 @@
 
     {{ link_css('assets/css/behance.css') }}
 
-
     @yield('header')
 
 </head>
-<body>
+<body @yield('bodyAtt')>
 
 @section('navbar')
     @include('partials._navbar')
