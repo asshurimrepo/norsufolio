@@ -1,0 +1,25 @@
+@media (min-width: 300px) {
+    .popover {
+        min-width: 300px;
+    }
+}
+
+@media (min-width: 500px) {
+    .popover {
+        min-width: 450px;
+    }
+}
+
+.popover {
+    border-radius: 3px;
+    border: none;
+}
+
+div[class^='popover-data col-xs-12 text-center'] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#popover259594 {
+    left: -100px;
+}

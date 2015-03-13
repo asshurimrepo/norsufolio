@@ -1,0 +1,82 @@
+.navbar {
+    background-color: #151515;
+    border-radius: 0px;
+    border: none;
+}
+
+.nav > li > a {
+    color: #c8c8c8;
+    font-size: 19px;
+}
+
+.nav > li.active > a, .nav > li > a:hover, .nav > li > a:focus, .nav .open > a:hover, .nav .open > a:focus, .nav .open > a  {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    background-color: #2b2b2b;
+    border: none;
+}
+
+
+.dropdown-menu > li > a {
+    color: #f4f4f4;
+    font-size: 12px;
+    text-align: left;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus  {
+    background: none;
+    color: white;
+    outline: none;
+}
+
+.glyphicon {
+    padding-right: 10px;
+}
+
+button {
+    color: white;
+}
+
+.navbar .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.badge {
+    color: white;
+    background-color: #ff0000;
+    border-radius: 3px;
+    font-size: 9px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    -webkit-transform: translateY(-10px) translateX(-5px);
+
+}
+
+.nav>li>a[class^="icon"] {
+    padding-right: 5px;
+    padding-left: 5px;
+    background: none;
+}
+
+.set-center {
+    padding-left: 90px;
+}
+
+@media(min-width: 300px) {
+    .set-center {
+        padding-left: 0px;
+    }
+}
+
+@media(min-width: 700px) {
+    .set-center {
+        padding-left: 90px;
+    }
+}
