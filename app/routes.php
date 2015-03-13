@@ -67,20 +67,23 @@
 
 	//Resource
 
-	/*
-	 * @route user
-	 * @uses UserController
-	 * */
-	Route::resource( 'user', 'UserController' );
+	Route::group( [ 'before' => 'auth' ], function ()
+	{
+		/*
+		 * @route user
+		 * @uses UserController
+		 * */
+		Route::resource( 'user', 'UserController' );
 
 
-	/*
-	 * @route user/project
-	 * @uses ProjectsController
-	 * */
-	Route::resource( 'user/project', 'ProjectsController' );
+		/*
+		 * @route user/project
+		 * @uses ProjectsController
+		 * */
+		Route::resource( 'user.project', 'ProjectsController' );
+	} );
 
 
 //	Route Bind
-	Route::model('user', 'User');
+	Route::model( 'user', 'User' );
 

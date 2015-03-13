@@ -78,4 +78,22 @@
 		{
 			return "{$this->first_name} {$this->last_name}";
 		}
+
+		public function upsCount()
+		{
+			$ups = 0;
+
+			$this->load('projects');
+
+			foreach($this->projects as $p){
+				$ups += $p->upsCount();
+			}
+
+			return $ups;
+		}
+
+		public function projectViews()
+		{
+			return $this->projects()->sum('views');
+		}
 	}
