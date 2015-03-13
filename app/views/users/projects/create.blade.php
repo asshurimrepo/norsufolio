@@ -33,7 +33,7 @@
             {{ Form::file('image',  ['class'=>'form-control', 'required']) }}
         </div>
 
-             <div class="right">{{ Form::button('Become the One!', ['class'=>' form-button  signup-button-social form-button-default auto-width btn-primary', 'type'=>'submit']) }}</div>
+             <div class="right">{{ Form::button('Submit your Awesomeness', ['class'=>' form-button  signup-button-social form-button-default auto-width btn-primary', 'type'=>'submit']) }}</div>
 
 
 

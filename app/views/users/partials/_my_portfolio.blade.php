@@ -41,7 +41,7 @@
                 <div class="col-md-12 user-panel-header">
                     <h4 class="pull-left">My Portfolio</h4>
                     <div class="pull-right">
-                        <a class="form-button form-button-default btn form-button-default" unselectable="on" id="editor-save"><i class="fa fa-cloud-upload"></i> Upload</a>
+                        <a href="{{ route('user.project.create') }}" class="form-button form-button-default btn form-button-default" unselectable="on" id="editor-save"><i class="fa fa-cloud-upload"></i> Upload</a>
                     </div>
                 </div>
             </div>
