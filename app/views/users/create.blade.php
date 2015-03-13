@@ -40,7 +40,15 @@
                             </div>
 
                             <div class="form-group">
-                                {{ Form::text('name', Form::old('name'), ['class'=>'form-control', 'placeholder' => 'Name', 'required']) }}
+                                {{ Form::text('name', Form::old('name'), ['class'=>'form-control', 'placeholder' => 'Nickname', 'required']) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ Form::text('first_name', Form::old('first_name'), ['class'=>'form-control', 'placeholder' => 'First Name', 'required']) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ Form::text('last_name', Form::old('last_name'), ['class'=>'form-control', 'placeholder' => 'Last Name', 'required']) }}
                             </div>
 
                             <div class="form-group">
@@ -50,6 +58,14 @@
 
                             <div class="form-group">
                                 {{ Form::text('address', Form::old('address'), ['class'=>'form-control', 'placeholder' => 'Address', 'required']) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ Form::text('college', Form::old('college'), ['class'=>'form-control', 'placeholder' => 'College', 'required']) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ Form::text('course', Form::old('course'), ['class'=>'form-control', 'placeholder' => 'Course', 'required']) }}
                             </div>
 
                             <button type="submit" class="btn btn-red">Signup!</button>
