@@ -634,6 +634,10 @@ a, .fake-link {
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.32);
 }
 
+.form-button-green:hover{
+    color: #FFF;
+}
+
 .form-button-green:hover, .form-button-green:focus, .form-button-green.ui-state-active, .form-button-green:active {
     background: #269916;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2fb31d), to(#1d800f));

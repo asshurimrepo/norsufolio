@@ -6,8 +6,9 @@
 
 .nav > li > a {
     color: #c8c8c8;
-    font-size: 19px;
+    font-size: 15px;
 }
+
 
 .nav > li.active > a, .nav > li > a:hover, .nav > li > a:focus, .nav .open > a:hover, .nav .open > a:focus, .nav .open > a  {
     background-color: #2b2b2b;

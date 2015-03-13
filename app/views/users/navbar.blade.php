@@ -24,6 +24,14 @@
                     <ul class="set-center nav navbar-nav text-center">
                         <li><a href="#">Discover</a></li>
                         <li class="{{ set_active_by_route('user.index') }}"><a href="{{ route('user.index') }}">My Portfolio</a></li>
+                        <li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Add Work <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ route('user.project.create') }}"><i class="fa fa-plus"></i> Add Project</a></li>
+                            </ul>
+                        </li>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-2">
