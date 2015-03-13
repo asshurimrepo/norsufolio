@@ -12,7 +12,7 @@
                 <h3 class="animated bounceInDown"><h3>Are you a Norsunian? <br /> <small>Become Awesome Now!</small></h3></h3>
                 <div class="login-box clearfix animated flipInY">
                     <div class="login-logo">
-                        <a href="{{ route('index') }}"><h1>UNLINK</h1></a>
+                        <a href="{{ route('index') }}"><h1>{{ $app_name }}</h1></a>
                     </div>
                     <hr>
                     <div class="login-form">

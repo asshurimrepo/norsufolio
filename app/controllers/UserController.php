@@ -38,7 +38,8 @@
 			$input             = Input::all();
 			$input['password'] = Hash::make( $input['password'] );
 
-			User::create( $input );
+			$user = User::create( $input );
+			$user->profile()->create( $input );
 
 			return Redirect::route( 'users.welcome' );
 
