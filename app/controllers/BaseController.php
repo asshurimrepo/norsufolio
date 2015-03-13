@@ -5,8 +5,8 @@ class BaseController extends Controller {
 
 	protected $data = [
 
-		'title'    => 'Welcome to NORSU Folio powered by Behance',
-		'app_name' => 'UNLINK'
+		'title'    => 'Welcome to NORSU Folio inspired by Behance',
+		'app_name' => 'NORSUFolio'
 
 	];
 
