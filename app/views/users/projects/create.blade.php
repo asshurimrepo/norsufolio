@@ -1,4 +1,4 @@
-@extends('master')
+@extends('users.user_master')
 
 
 @section('header')
@@ -7,7 +7,7 @@
 
 @stop
 
-@section('content')
+@section('body')
 
 
 
