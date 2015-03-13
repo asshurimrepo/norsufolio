@@ -28,7 +28,7 @@
                         <li class="dropdown {{ set_active_by_route('user.project.create') }}">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Add Work <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('user.project.create') }}"><i class="fa fa-plus"></i> Add Project</a></li>
+                                <li><a href="{{ route('user.project.create', [$current_user->id]) }}"><i class="fa fa-plus"></i> Add Project</a></li>
                             </ul>
                         </li>
                         </li>

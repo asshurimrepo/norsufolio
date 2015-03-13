@@ -81,9 +81,11 @@
 		 * @uses ProjectsController
 		 * */
 		Route::resource( 'user.project', 'ProjectsController' );
+
+		//	Route Bind
+		Route::model( 'user', 'User' );
 	} );
 
 
-//	Route Bind
-	Route::model( 'user', 'User' );
+
 
