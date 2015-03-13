@@ -73,4 +73,9 @@
 			return file_exists( public_path( "profiles/{$this->id}.jpg" ) );
 		}
 
+
+		public function fullName()
+		{
+			return "{$this->first_name} {$this->last_name}";
+		}
 	}

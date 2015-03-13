@@ -4,7 +4,8 @@
 }
 
 .user-panel .user-panel-header > h4{
-    padding: 10px;
+    padding: 0px;
+    margin: 6px;
 }
 
 .user-panel .actions{

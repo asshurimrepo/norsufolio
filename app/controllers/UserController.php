@@ -13,6 +13,9 @@
 		 */
 		public function index()
 		{
+			$this->data['projects'] = Auth::user()->projects()->orderBy('id', 'desc')->get();
+
+
 			return View::make( 'users.index', $this->data );
 		}
 
