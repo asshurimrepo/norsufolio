@@ -2,9 +2,8 @@
 
 
 @section('header')
-
+    @parent
     {{ link_css('assets/css/form-animate.css') }}
-
 @stop
 
 @section('body')
