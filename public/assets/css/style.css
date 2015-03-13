@@ -102,9 +102,6 @@ a:hover, a:focus {
 #featured-projects {
   margin-top: 30px !important; }
 
-.project-cover {
-  padding: 10px; }
-
 .project-img {
   height: 200px;
   background-size: cover;
