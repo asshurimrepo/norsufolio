@@ -2,7 +2,7 @@
     <div id="rightmodal" class="modal-content col-sm-3">
         <div class="left-modal-body modal-body">
             <div class="row">
-                <div class="col-sm-5 no-pad-right text-right">
+                <div class="col-sm-5 text-right">
                     <img class="img-responsive img-thumbnail" src="{{ $current_user->imageURl() }}" alt="images">
                 </div>
                 <div class="col-sm-7">

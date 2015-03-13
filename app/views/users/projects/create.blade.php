@@ -4,14 +4,16 @@
 @section('header')
     @parent
     {{ link_css('assets/css/form-animate.css') }}
+    {{ link_css('assets/users/css/edit.css') }}
+
 @stop
 
 @section('body')
 
+    @include('users.partials._back_to_profile')
 
 
-
-<div class="container away-from-top">
+<div class="container away-from-top edit-panel">
     <div class="row">
     {{ Form::open(['route' => 'user.project.store', 'class'=>'col-md-5 col-md-offset-3 go-right', 'files'=>true]) }}
 			<h2 class="center">Add a Project</h2>

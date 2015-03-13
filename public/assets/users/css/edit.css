@@ -1,5 +1,5 @@
 .edit-panel{
-    margin-top: 120px !important;
+    margin-top: 100px !important;
 }
 
 @media (max-width:603px) {
@@ -1079,7 +1079,7 @@ background-position: 0 -9px;
     left: 0;
     overflow: hidden;
     position: fixed;
-    top: 51px;
+    top: 50px;
     width: 100%;
     padding: 10px;
     z-index: 8;

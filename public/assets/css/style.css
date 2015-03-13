@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html {
+  padding-top: 25px !important; }
+
 body {
   padding-top: 30px !important;
   background-color: #d8d8d8;
