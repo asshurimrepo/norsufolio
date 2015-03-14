@@ -48,7 +48,7 @@
 
                 <div class="social-login row ">
                     <div class="fb-login col-md-12 animated flipInX">
-                        <a href="{{ route('fb.login') }}" class="btn btn-facebook btn-block"><i class="fa fa-facebook"></i> Connect with <strong>Facebook</strong></a>
+                        <a href="{{ route('fb.auth') }}" class="btn btn-facebook btn-block"><i class="fa fa-facebook"></i> Connect with <strong>Facebook</strong></a>
                     </div>
 
                 </div>

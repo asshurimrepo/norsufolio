@@ -1,5 +1,4 @@
 <?php
-	session_start();
 
 	use Norsu\Accounts\Providers\Facebook;
 
