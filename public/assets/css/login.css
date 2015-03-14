@@ -35,7 +35,7 @@ body{
     background: transparent url(../img/login-bg.png) repeat;
     border:7px solid rgba(255, 255, 255, 0.31);
     -webkit-background-clip: padding-box; /* for Safari */
-    -moz-background-clip: padding-box; /* for old Firefox */
+    -moz-background-clip: padding-box;  /*for old Firefox */
     -o-background-clip: padding-box; /* for old Firefox */
     background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
     -webkit-border-radius: 15px;
@@ -568,5 +568,3 @@ label.checkbox input{
     -o-animation-name: bounceInDown;
     animation-name: bounceInDown;
 }
-Inner: 1429 x 736
-Outer: 0 x 0

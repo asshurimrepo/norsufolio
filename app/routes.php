@@ -21,6 +21,36 @@
 	] );
 
 
+
+
+
+
+//	Facebook
+
+	/*
+	 * @route fb/authorized
+	 * @name fb.auth
+	 * @uses FacebookLoginController@authorize
+	 * */
+	Route::get( 'fb/authorized', [
+		'as'   => 'fb.auth',
+		'uses' => 'FacebookLoginController@authorized'
+	] );
+
+
+	/*
+	 * @route fb/login
+	 * @name fb.callback
+	 * @uses FacebookLoginController@login
+	 * */
+	Route::get( 'fb/login', [
+		'as'   => 'fb.login',
+		'uses' => 'FacebookLoginController@login'
+	] );
+
+
+
+
 //Sessions
 
 	/*
