@@ -7,6 +7,15 @@
     {{ link_css('assets/css/footer-infinity.css') }}
     {{ link_css('assets/css/responsive.css') }}
 
+    <style>
+        @if(Auth::check())
+        #content-container {
+            margin-top: 20px;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        @endif
+    </style>
 @stop
 
 @section('bodyAtt')
