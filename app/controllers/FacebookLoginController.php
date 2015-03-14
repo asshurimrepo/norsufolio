@@ -1,5 +1,6 @@
 <?php
 
+	use Illuminate\Database\QueryException;
 	use Norsu\Accounts\Providers\Facebook;
 
 
@@ -36,7 +37,7 @@
 				$fb_user['facebook_id'] = $fb_user['id'];
 				$user = User::create( $fb_user );
 			}
-			catch ( ErrorException $e )
+			catch ( QueryException $e )
 			{
 				$user = User::where( 'email', $fb_user['email'] )->first();
 			}
