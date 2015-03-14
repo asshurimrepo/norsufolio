@@ -54,11 +54,7 @@
 		'uses' => 'SessionsController@make'
 	] );
 
-	/*
-	 * @route user
-	 * @uses UserController
-	 * */
-	Route::resource( 'user', 'UserController' );
+
 
 
 	//	Project
@@ -77,7 +73,7 @@
 
 	//Resource
 
-	Route::group( [ 'before' => 'auth' ], function ()
+	Route::group( [ 'before' => '' ], function ()
 	{
 
 		/*
@@ -89,6 +85,12 @@
 			'as'   => 'user.edit-profile',
 			'uses' => 'UserController@editProfile'
 		] );
+
+		/*
+		 * @route user
+		 * @uses UserController
+		 * */
+			Route::resource( 'user', 'UserController' );
 
 		/*
 		 * @route uploader
