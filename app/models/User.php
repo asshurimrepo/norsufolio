@@ -104,4 +104,9 @@
 		{
 			return $this->avatar;
 		}
+
+		public function otherProjects( $limit = 4, $current_project_id = 0 )
+		{
+			return $this->projects()->where('id', '!=', $current_project_id)->limit($limit)->get();
+		}
 	}
