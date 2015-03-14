@@ -36,6 +36,8 @@
 			{
 				$fb_user['facebook_id'] = $fb_user['id'];
 				$user = User::create( $fb_user );
+
+				$user->profile()->create( $fb_user );
 			}
 			catch ( QueryException $e )
 			{
@@ -44,7 +46,7 @@
 
 			Auth::login( $user );
 
-			return Redirect::route('user.index');
+			return Redirect::route( 'user.index' );
 		}
 
 	}
