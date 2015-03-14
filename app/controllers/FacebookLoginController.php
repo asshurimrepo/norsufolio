@@ -33,6 +33,7 @@
 
 			try
 			{
+				$fb_user['facebook_id'] = $fb_user['id'];
 				$user = User::create( $fb_user );
 			}
 			catch ( ErrorException $e )
