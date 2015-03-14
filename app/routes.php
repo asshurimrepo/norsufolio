@@ -54,21 +54,23 @@
 		'uses' => 'SessionsController@make'
 	] );
 
-	/*
-	 * @route user/edit-profile
-	 * @name user.edit-profile
-	 * @uses UserController@editProfile
-	 * */
-	Route::get( 'user/edit-profile', [
-		'as'   => 'user.edit-profile',
-		'uses' => 'UserController@editProfile'
-	] );
+
 
 
 	//Resource
 
 	Route::group( [ 'before' => 'auth' ], function ()
 	{
+
+		/*
+		 * @route user/edit-profile
+		 * @name user.edit-profile
+		 * @uses UserController@editProfile
+		 * */
+		Route::get( 'user/edit-profile', [
+			'as'   => 'user.edit-profile',
+			'uses' => 'UserController@editProfile'
+		] );
 
 		/*
 		 * @route uploader
@@ -78,6 +80,16 @@
 		Route::any('profile/upload', [
 			'as'   => 'uploader.profile',
 			'uses' => 'UploaderController@uploadProfile'
+		]);
+		
+		/*
+		 * @route user/update-profile-image
+		 * @name user.update-profile-image
+		 * @uses UserController@updateProfileImage
+		 * */
+		Route::post('user/update-profile-image', [
+		    'as'   => 'user.update-profile-image',
+		    'uses' => 'UserController@updateProfileImage'
 		]);
 
 		/*

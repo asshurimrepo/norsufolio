@@ -13,7 +13,7 @@
 		 */
 		public function index()
 		{
-			$this->data['projects'] = Auth::user()->projects()->orderBy('id', 'desc')->get();
+			$this->data['projects'] = Auth::user()->projects()->orderBy( 'id', 'desc' )->get();
 
 
 			return View::make( 'users.index', $this->data );
@@ -93,6 +93,14 @@
 			$profile->update( Input::all() );
 
 			return Redirect::back()->with( 'message', 'Your changes have been saved.' );
+		}
+
+
+		public function updateProfileImage()
+		{
+			Auth::user()->update( [ 'avatar' => Input::get( 'data.0.url' ) ] );
+
+			return Auth::user();
 		}
 
 

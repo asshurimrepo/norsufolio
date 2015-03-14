@@ -51,6 +51,9 @@
 
 		public function imageUrl()
 		{
+			if($this->avatarExists()){
+				return $this->avatar;
+			}
 
 			if ( $this->imageProfileExists() )
 			{
@@ -95,5 +98,10 @@
 		public function projectViews()
 		{
 			return $this->projects()->sum('views');
+		}
+
+		private function avatarExists()
+		{
+			return $this->avatar;
 		}
 	}

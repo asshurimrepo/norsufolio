@@ -20,22 +20,24 @@
     {{ link_js('lib/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}
     {{ link_js('lib/jquery-file-upload/js/jquery.iframe-transport.js') }}
     {{ link_js('lib/jquery-file-upload/js/jquery.fileupload.js') }}
-    <script>
-        $(function(){
 
-            $('#fileupload').fileupload({
-                dataType: 'json',
-                done: function (e, data) {
-                    $.post("{{ route('uploader.profile') }}", {saveProfile: true, data: data}, function(data){
+    <script>
+        $('#fileupload').fileupload({
+            dataType: 'json',
+            done: function (e, data) {
+                setTimeout(function(){
+
+                    $.post("{{ route('user.update-profile-image') }}", {data: data.result.files}, function(data){
                         $(".preloader").fadeOut();
                     });
-                },
-                progressall: function (e, data) {
-                    $(".preloader").fadeIn();
-                }
-            });
 
+                }, 500);
+            },
+            progressall: function (e, data) {
+                $(".preloader").fadeIn();
+            }
         });
+
     </script>
 @stop
 
@@ -75,7 +77,7 @@
                             <div class="js-profile-upload profile-upload"
                                  style="position: relative; overflow: hidden; direction: ltr;"><span
                                         class="beicons">+</span>Upload<input
-                                        qq-button-id="33fcb7ed-8eee-44ee-9a0c-c820338a45ca" id="fileupload" type="file" name="file"
+                                        qq-button-id="33fcb7ed-8eee-44ee-9a0c-c820338a45ca" id="fileupload" type="file" name="files"
                                         style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0; height: 100%;" data-url="{{ route('uploader.profile') }}">
                             </div>
                         </div>
