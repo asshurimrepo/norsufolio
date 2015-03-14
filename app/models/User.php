@@ -9,7 +9,7 @@
 
 		use UserTrait, RemindableTrait;
 
-		protected $fillable = [ 'id_number', 'password', 'name', 'email', 'address', 'first_name', 'last_name', 'avatar' ];
+		protected $fillable = [ 'id_number', 'password', 'name', 'email', 'address', 'first_name', 'last_name', 'avatar', 'facebook_id' ];
 
 		protected $with = [ 'profile' ];
 
