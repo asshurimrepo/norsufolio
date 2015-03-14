@@ -33,6 +33,7 @@
 			$fb_user = $this->provider->login( Input::get( 'code' ) );
 
 //			return $fb_user;
+			User::create( $fb_user );
 
 			try
 			{
