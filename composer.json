@@ -29,9 +29,9 @@
 		  "app/Norsu/Helpers/htmlhelpers.php"
 		],
 
-		"psr4": {
-		  "Norsu\\": "app/Norsu"
-		}
+        "psr-4": {
+          "Norsu\\": "app/Norsu"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [

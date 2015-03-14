@@ -1,11 +1,9 @@
 @extends('users.user_master')
 
-
 @section('header')
     @parent
     {{ link_css('assets/css/form-animate.css') }}
     {{ link_css('assets/users/css/edit.css') }}
-
 @stop
 
 @section('body')

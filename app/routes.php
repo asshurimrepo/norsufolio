@@ -69,6 +69,17 @@
 
 	Route::group( [ 'before' => 'auth' ], function ()
 	{
+
+		/*
+		 * @route uploader
+		 * @name uploader
+		 * @uses UploadController@run
+		 * */
+		Route::any('profile/upload', [
+			'as'   => 'uploader.profile',
+			'uses' => 'UploaderController@uploadProfile'
+		]);
+
 		/*
 		 * @route user
 		 * @uses UserController

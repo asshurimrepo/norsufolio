@@ -5,12 +5,36 @@
     {{ link_css('assets/users/css/edit.css') }}
     {{ link_css('assets/css/text-list.css') }}
     {{ link_css('assets/css/footer-infinity.css') }}
+    {{ link_css('assets/css/footer-infinity.css') }}
 @stop
 
 @section('footer')
+    @parent
+
     <script>
         $(".js-section-nav").click(function(){
             $(this).addClass('active').parent().siblings().find('a').removeClass('active');
+        });
+    </script>
+
+    {{ link_js('lib/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}
+    {{ link_js('lib/jquery-file-upload/js/jquery.iframe-transport.js') }}
+    {{ link_js('lib/jquery-file-upload/js/jquery.fileupload.js') }}
+    <script>
+        $(function(){
+
+            $('#fileupload').fileupload({
+                dataType: 'json',
+                done: function (e, data) {
+                    $.post("{{ route('uploader.profile') }}", {saveProfile: true, data: data}, function(data){
+                        $(".preloader").fadeOut();
+                    });
+                },
+                progressall: function (e, data) {
+                    $(".preloader").fadeIn();
+                }
+            });
+
         });
     </script>
 @stop
@@ -19,9 +43,15 @@
 
     @include('users.partials._back_to_profile')
 
+    <div class="preloader" style="display: none;">
+        <i class="fa fa-circle-o-notch fa-spin fa-spin"></i>
+        <h5 class="lead">Uploading</h5>
+    </div>
+
     {{ Form::open(['method'=>'PUT', 'route'=>['user.update', $current_user->id]]) }}
 
     <section class="row user-panel edit-panel">
+
         <div id="content-wrapper" class="cfix">
             <ul class="form-nav js-form-nav" role="tablist">
                 <li><a href="#basic_information" data-section="basic_information" class="js-section-nav active">Basic
@@ -45,8 +75,8 @@
                             <div class="js-profile-upload profile-upload"
                                  style="position: relative; overflow: hidden; direction: ltr;"><span
                                         class="beicons">+</span>Upload<input
-                                        qq-button-id="33fcb7ed-8eee-44ee-9a0c-c820338a45ca" type="file" name="image"
-                                        style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0; height: 100%;">
+                                        qq-button-id="33fcb7ed-8eee-44ee-9a0c-c820338a45ca" id="fileupload" type="file" name="file"
+                                        style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0; height: 100%;" data-url="{{ route('uploader.profile') }}">
                             </div>
                         </div>
                         <div id="basicInfo" class="profile-basic-info">
