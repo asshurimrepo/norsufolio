@@ -29,6 +29,7 @@
 
                     $.post("{{ route('user.update-profile-image') }}", {data: data.result.files}, function(data){
                         $(".preloader").fadeOut();
+                        $(".profile-image").prop('src', data.avatar);
                     });
 
                 }, 500);
