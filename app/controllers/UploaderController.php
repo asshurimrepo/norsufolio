@@ -7,16 +7,16 @@
 
 		public function uploadProfile()
 		{
-			/*if ( Input::has( 'saveProfile' ) )
+			if ( Input::has( 'saveProfile' ) )
 			{
-				$options = Input::get('data');
+				$options = Input::all();
 
 				Auth::user()->update([
 					'avatar' => Input::get('data.0.url'),
 				]);
 
-				return 'OK NA!';
-			}*/
+				return $options;
+			}
 
 			new Uploader;
 		}
