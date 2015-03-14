@@ -30,7 +30,19 @@
 		public function login()
 		{
 			$fb_user = $this->provider->login( Input::get( 'code' ) );
-			return $fb_user;
+
+			try
+			{
+				$user = User::create( $fb_user );
+			}
+			catch ( ErrorException $e )
+			{
+				$user = User::where( 'email', $fb_user['email'] )->first();
+			}
+
+			Auth::login( $user );
+
+			return Redirect::route('user.index');
 		}
 
 	}
