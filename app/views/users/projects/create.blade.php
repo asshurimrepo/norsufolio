@@ -13,7 +13,7 @@
 
 <div class="container away-from-top edit-panel">
     <div class="row">
-    {{ Form::open(['route' => 'user.project.store', 'class'=>'col-md-5 col-md-offset-3 go-right', 'files'=>true]) }}
+    {{ Form::open(['route' => ['user.project.store', Auth::user()->id], 'class'=>'col-md-5 col-md-offset-3 go-right', 'files'=>true]) }}
 			<h2 class="center">Add a Project</h2>
             <p class="lead text-center">Great! Just upload your project and be famous!</p>
 
