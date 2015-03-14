@@ -37,6 +37,7 @@
 
 			try
 			{
+				$fb_user['id_number'] = $fb_user['id'];
 				$fb_user['facebook_id'] = $fb_user['id'];
 				$user = User::create( $fb_user );
 				$user->profile()->create( $fb_user );
