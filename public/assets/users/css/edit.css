@@ -2235,11 +2235,10 @@ a:active {
     z-index: 9999;
 }
 
-@media (min-width: 340px){
+@media (max-width: 340px){
     .preloader{
         font-size: 40px;
         line-height: 30%;
-        height: 100%;
         padding-top: 10vh;
     }
 }
