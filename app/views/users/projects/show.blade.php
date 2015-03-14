@@ -1,6 +1,8 @@
 @extends('dynamic_master')
 
 @section('header')
+    <meta name="up_project" content="{{ route('project.up',['']) }}"/>
+
     @parent
     {{--{{ link_css('assets/users/css/edit.css') }}--}}
     {{ link_css('assets/css/text-list.css') }}
@@ -8,9 +10,10 @@
     {{ link_css('assets/css/responsive.css') }}
 
     <style>
-        body{
+        body {
             padding-bottom: 50px;
         }
+
         @if(Auth::check())
         #content-container {
             padding-left: 0 !important;
@@ -20,18 +23,23 @@
     </style>
 @stop
 
+@section('footer')
+    {{ link_js('assets/js/project.js') }}
+@stop
+
 @section('bodyAtt')
-    class="logged-in logged-in-1 corepacki networki responsive no-padding project-view project-styles show-cta editor-version-4 no-right-column be-network no-has-touch has-placeholders globalnav__external__no-touch"
+    ng-app class="logged-in logged-in-1 corepacki networki responsive no-padding project-view project-styles show-cta editor-version-4 no-right-column be-network no-has-touch has-placeholders globalnav__external__no-touch"
 @stop
 
 @section('binder')
-    <div id="project-container-wrapper">
+    <div id="project-container-wrapper" ng-controller="ProjectController">
+
+        <span ng-init='project = {{ json_encode($project) }}'></span>
+
         <div id="content-container" class="grid-site cfix">
             <div id="project-container" class="cfix">
 
                 <div id="project-sidebar" class="right">
-
-
                     <!-- warning -->
 
                     <div class="sidebar-block sidebar-owner">
@@ -171,19 +179,37 @@
 
                     </div>
                     <!-- #proj-header -->
+
+
                     <div id="primary-project-content" class="project-styles hd_images_enabled">
                         <ul id="project-modules" class="editor-modules-version-4"
                             style="background-color: transparent;">
 
-                            <img src="{{ $project->getImage() }}" alt="{{ $project->name }}" class="img-responsive" />
+                            <img src="{{ $project->getImage() }}" alt="{{ $project->name }}" class="img-responsive"/>
 
                         </ul>
+
                         <div id="appreciation">
                             <div id="appreciation-tooltipi" class="tooltipi-container">
-                                <span id="appreciation-sticker"
-                                      class="icon-project-appreciate ccn-appreciation-sprite"></span>
+                                @if(Auth::check())
+
+                                    @if( ! $up)
+                                        <span id="appreciation-sticker" ng-click="upThis($event)"
+                                              class="icon-project-appreciate ccn-appreciation-sprite"></span>
+                                    @else
+                                        <div id="appreciated-on-content">
+                                            <div class="app-content app-img-container beicons-pre beicons-pre-thumb"></div>
+                                            <div class="app-content app-date">Appreciated on {{ $up->created_at->toFormattedDateString() }}</div>
+                                        </div>
+                                    @endif
+
+
+
+                                @endif
+
                             </div>
                         </div>
+
                     </div>
                     <!-- #primary-project-content -->
 
@@ -224,7 +250,7 @@
                                         <a href="{{ route('project.show', $pro->id) }}">
                                             <img src="{{ $pro->getImage() }}"
                                                  class="other-project-cover" data-pin-nopin="nopin"></a>
-                                        <a href="#"  class="tooltipi tooltipi-blue"><span
+                                        <a href="#" class="tooltipi tooltipi-blue"><span
                                                     class="project-title block bold margin-bottom-5">{{ $pro->name }}</span><span
                                                     class="project-fields block">Drawing, Illustration, Painting</span></a>
                                     </li>

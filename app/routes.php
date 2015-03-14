@@ -71,7 +71,18 @@
 	Route::model('project_id', 'Project');
 
 
-	//Resource
+	Route::group( [ 'before' => 'auth' ], function ()
+	{
+		/*
+		 * @route project-up/{project_id}
+		 * @name project.up
+		 * @uses ProjectsController@upProject
+		 * */
+		Route::post('project-up/{project_id}', [
+			'as'   => 'project.up',
+			'uses' => 'ProjectsController@upProject'
+		]);
+	});
 
 	Route::group( [ 'before' => '' ], function ()
 	{

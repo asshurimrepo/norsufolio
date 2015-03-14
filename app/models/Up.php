@@ -1,5 +1,5 @@
 <?php
 
 class Up extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = ['user_id', 'project_id'];
 }
