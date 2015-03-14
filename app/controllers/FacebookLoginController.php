@@ -32,6 +32,8 @@
 		{
 			$fb_user = $this->provider->login( Input::get( 'code' ) );
 
+			return $fb_user;
+
 			try
 			{
 				$fb_user['facebook_id'] = $fb_user['id'];
