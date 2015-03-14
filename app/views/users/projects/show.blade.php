@@ -1,4 +1,4 @@
-@extends(Auth::check() ? 'users.user_master' : 'master')
+@extends('dynamic_master')
 
 @section('header')
     @parent
@@ -13,7 +13,7 @@
     class="logged-in logged-in-1 corepacki networki responsive no-padding project-view project-styles show-cta editor-version-4 no-right-column be-network no-has-touch has-placeholders globalnav__external__no-touch"
 @stop
 
-@section('body')
+@section('binder')
     <div id="project-container-wrapper">
         <div id="content-container" class="grid-site cfix">
             <div id="project-container" class="cfix">
