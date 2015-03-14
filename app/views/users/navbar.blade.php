@@ -40,7 +40,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('user.index') }}" data-toggle="modal" data-target=".user-profile-box-modal"><i class="fa fa-users"></i> My Portfolio</a></li>
+                                <li><a href="{{ route('user.index') }}"><i class="fa fa-users"></i> My Portfolio</a></li>
                                 {{--<li><a href="#"><i class="fa fa-cogs"></i> Account Settings</a></li>--}}
                                 <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                             </ul>
