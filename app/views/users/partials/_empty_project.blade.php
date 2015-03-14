@@ -6,7 +6,7 @@
     <div class="hide-phone hide-tablet"> Projects added to your portfolio (and made public) are
         submitted to the gallery and eligible to be "featured".
 
-        <a href="/portfolio/editor" id="upload-project"
+        <a href="{{ route('user.project.create', [$current_user->id]) }}" id="upload-project"
            class="form-button form-button-massive form-button-default">Upload My First Project</a>
     </div>
     <div class="show-phone show-tablet"> You haven't uploaded any projects. Add projects to your
