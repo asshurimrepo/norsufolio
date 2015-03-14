@@ -39,7 +39,7 @@
 				$fb_user['facebook_id'] = $fb_user['id'];
 				$user = User::create( $fb_user );
 //				$user->profile()->create( $fb_user );
-				return $user;
+				return $fb_user;
 			}
 			catch ( QueryException $e )
 			{
