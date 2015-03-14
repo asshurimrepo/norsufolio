@@ -1,7 +1,5 @@
 <?php  namespace Norsu\Accounts\Providers;
 
-session_start();
-
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookSession;
 use Facebook\GraphUser;
