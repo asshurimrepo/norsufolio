@@ -58,6 +58,9 @@ class ProjectsController extends \BaseController {
 		$this->data['project'] = $project;
 		$this->data['user'] = $project->user;
 
+		$project->views += 1;
+		$project->update();
+
 		return View::make('users.projects.show', $this->data);
 	}
 
