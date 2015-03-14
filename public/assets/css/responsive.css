@@ -1676,7 +1676,7 @@
 }
 
 .project-icon-left:before, .project-icon-right:after, #appreciation-sticker {
-    background: url("//a2.behance.net/img/sprites/project-icons.png?cb=311724957") no-repeat;
+    background: url("../../images/project-icons.png") no-repeat;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
