@@ -20,7 +20,7 @@ class Facebook extends Provider implements ProviderInterface {
 	 */
 	public function __construct()
 	{
-		FacebookSession::setDefaultApplication( 1379913132330593, '647b1ba23cb4ee145ab20b9b890ca88a' );
+		FacebookSession::setDefaultApplication( '1379913132330593', '647b1ba23cb4ee145ab20b9b890ca88a' );
 		$this->fb_login_helper = new FacebookRedirectLoginHelper( route( 'fb.login' ) );
 
 	}
