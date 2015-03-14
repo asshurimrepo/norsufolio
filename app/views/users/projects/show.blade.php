@@ -1,4 +1,4 @@
-@extends('users.user_master')
+@extends(Auth::check() ? 'users.user_master' : 'master')
 
 @section('header')
     @parent
