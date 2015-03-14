@@ -2234,3 +2234,13 @@ a:active {
     padding-top: 40vh;
     z-index: 9999;
 }
+
+@media (min-width: 340px){
+    .preloader{
+
+        font-size: 40px;
+        line-height: 30%;
+        height: 100%;
+        padding-top: 40vh;
+    }
+}
