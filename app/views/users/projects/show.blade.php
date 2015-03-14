@@ -8,6 +8,9 @@
     {{ link_css('assets/css/responsive.css') }}
 
     <style>
+        body{
+            padding-bottom: 50px;
+        }
         @if(Auth::check())
         #content-container {
             margin-top: 20px;
