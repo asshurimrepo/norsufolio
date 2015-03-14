@@ -6,7 +6,7 @@ use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookSession;
 use Facebook\GraphUser;
 use Facebook\FacebookRequest;
-use Menabird\Accounts\Providers\Contracts\Provider as ProviderInterface;
+use Norsu\Accounts\Providers\Contracts\Provider as ProviderInterface;
 
 class Facebook extends Provider implements ProviderInterface {
 
