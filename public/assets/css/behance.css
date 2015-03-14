@@ -4714,7 +4714,7 @@ html, body, #content-wrapper, #top-panel {
     }
 
     .grid-site {
-        min-width: 320px;
+        /*min-width: 320px;*/
     }
 
     .location-menu .search-option-confirm {
