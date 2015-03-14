@@ -13,7 +13,6 @@
         }
         @if(Auth::check())
         #content-container {
-            margin-top: 20px;
             padding-left: 0 !important;
             padding-right: 0 !important;
         }
