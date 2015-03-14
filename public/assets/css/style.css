@@ -2,6 +2,10 @@
 html {
   padding-top: 25px !important; }
 
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important; }
+
 body {
   padding-top: 30px !important;
   background-color: #d8d8d8;
