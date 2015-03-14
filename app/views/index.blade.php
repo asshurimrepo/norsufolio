@@ -3,7 +3,8 @@
 
 @section('content')
 
-       <div class="container-fluid header-gradient dark-header-img">
+    @unless(Auth::check())
+        <div class="container-fluid header-gradient dark-header-img">
 
             <div class="center">
 
@@ -14,34 +15,33 @@
             </div>
 
 
-       </div>
+        </div>
+    @endunless
 
 
-       <div class="container-fluid featured-text">
+    <div class="container-fluid featured-text">
 
-            <div class="center">
-                <h3> <i class="fa fa-list-alt"></i> Featured Projects</h3>
-            </div>
+        <div class="center">
+            <h3><i class="fa fa-list-alt"></i> Featured Projects</h3>
+        </div>
 
-       </div>
-
-
-        <div class="container" id="featured-projects">
-
-                <div class="row">
-
-                   @foreach(Project::orderBy('id', 'desc')->get() as $project)
-
-                       @include('ui.elements.cover_block')
-
-                   @endforeach
-
-                </div>
+    </div>
 
 
+    <div class="container" id="featured-projects">
 
+        <div class="row">
+
+            @foreach(Project::orderBy('id', 'desc')->get() as $project)
+
+                @include('ui.elements.cover_block')
+
+            @endforeach
 
         </div>
+
+
+    </div>
 
 
 
