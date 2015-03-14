@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-6">
                     <ul class="set-center nav navbar-nav text-center">
-                        <li><a href="{{ route('index') }}">Discover</a></li>
+                        <li class="{{ set_active_by_route('index') }} {{ set_active_by_route('project.show') }}"><a href="{{ route('index') }}">Discover</a></li>
                         <li class="{{ set_active_by_route('user.index') }}"><a href="{{ route('user.index') }}">My Portfolio</a></li>
                         <li>
                         <li class="dropdown {{ set_active_by_route('user.project.create') }}">
