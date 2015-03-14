@@ -4,6 +4,7 @@ class Project extends \Eloquent {
 	protected $fillable = ['user_id', 'name','description', 'image', 'views'];
 
 
+
 	public function getImage() {
 		return asset('uploads').'/'.$this->image;
 	}
@@ -20,5 +21,10 @@ class Project extends \Eloquent {
 	public function upsCount()
 	{
 		return $this->ups()->count();
+	}
+
+	public function description()
+	{
+		return nl2br($this->description);
 	}
 }

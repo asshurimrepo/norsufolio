@@ -54,7 +54,25 @@
 		'uses' => 'SessionsController@make'
 	] );
 
+	/*
+	 * @route user
+	 * @uses UserController
+	 * */
+	Route::resource( 'user', 'UserController' );
 
+
+	//	Project
+	/*
+	 * @route project/{project_id}
+	 * @name project.show
+	 * @uses ProjectsController@showProject
+	 * */
+	Route::get( 'project/{project_id}', [
+		'as'   => 'project.show',
+		'uses' => 'ProjectsController@showProject'
+	] );
+
+	Route::model('project_id', 'Project');
 
 
 	//Resource
@@ -91,12 +109,6 @@
 		    'as'   => 'user.update-profile-image',
 		    'uses' => 'UserController@updateProfileImage'
 		]);
-
-		/*
-		 * @route user
-		 * @uses UserController
-		 * */
-		Route::resource( 'user', 'UserController' );
 
 		/*
 		 * @route user/project

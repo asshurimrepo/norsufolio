@@ -9,6 +9,9 @@
     font-size: 15px;
 }
 
+#project-container-wrapper a.form-button:hover, #project-container-wrapper a.form-button:focus{
+    color: #FFF;
+}
 
 .nav > li.active > a, .nav > li > a:hover, .nav > li > a:focus, .nav .open > a:hover, .nav .open > a:focus, .nav .open > a  {
     background-color: #2b2b2b;

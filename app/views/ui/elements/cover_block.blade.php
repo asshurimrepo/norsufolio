@@ -1,25 +1,39 @@
-<div class="js-item cover-block project-cover js-project-cover editable cfix first">  <div class="cover-img">    <a href="#" class="cover-img-link">        <div data-alt="{{ $project->name }}" data-rendered="rendered" style="
-">                          <img alt="{{ $project->name }}" src="{{ $project->getImage() }}" class="img-responsive" title="{{ $project->name }}"></div>          </a>  </div>
+<div class="js-item cover-block project-cover js-project-cover editable cfix first">
+    <div class="cover-img"><a href="{{ route('project.show', $project->id) }}" class="cover-img-link">
+            <div data-alt="{{ $project->name }}" data-rendered="rendered" style="
+"><img alt="{{ $project->name }}" src="{{ $project->getImage() }}" class="img-responsive" title="{{ $project->name }}">
+            </div>
+        </a></div>
 
 
     <div class="cover-info-stats">
         <div class="cover-info">
-            <div class="cover-name">        <a href="#" class="projectName cover-name-link">{{ $project->name }}</a>      </div>
-            <div class="cover-by-wrap">        <div class="cover-by">by</div>        <div class="cover-by-link ">
+            <div class="cover-name"><a href="#" class="projectName cover-name-link">{{ $project->name }}</a></div>
+            <div class="cover-by-wrap">
+                <div class="cover-by">by</div>
+                <div class="cover-by-link ">
                     <a class="text-ellipsis single-owner-link" href="#">
-                        <!--this must touch to avoid extra space--><span class="js-mini-profile">{{ $project->user->name }}</span>                </a>
+                        <!--this must touch to avoid extra space--><span
+                                class="js-mini-profile">{{ $project->user->name }}</span> </a>
 
-                </div>      </div><!-- .cover-by-wrap -->
-        </div><!-- .cover-info -->
+                </div>
+            </div>
+            <!-- .cover-by-wrap -->
+        </div>
+        <!-- .cover-info -->
         <div class="cover-stat-fields-wrap">
             <div class="cover-stat-wrap">
                 <span class="cover-stat cover-stat-appreciations  beicons-pre beicons-pre-thumb"> {{ $project->upsCount() }}</span>
                 <span class="cover-stat cover-stat-views beicons-pre beicons-pre-eye hide-phone"> {{ $project->views }}</span>
                 <!-- .featured -->
-            </div><!-- .cover-stat-wrap -->
-            <div class="cover-fields">          <a href="#" title="Art Direction" class="field-link">Art Direction</a>,
+            </div>
+            <!-- .cover-stat-wrap -->
+            <div class="cover-fields"><a href="#" title="Art Direction" class="field-link">Art Direction</a>,
                 <a href="#" title="Fashion" class="field-link">Fashion</a>,
-                <a href="#" title="Graphic Design" class="field-link">Graphic Design</a>      </div><!-- .cover-fields -->
-        </div><!-- .cover-info -->
-    </div><!-- #cover-stat-fields-wrap -->
+                <a href="#" title="Graphic Design" class="field-link">Graphic Design</a></div>
+            <!-- .cover-fields -->
+        </div>
+        <!-- .cover-info -->
+    </div>
+    <!-- #cover-stat-fields-wrap -->
 </div>

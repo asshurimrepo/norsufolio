@@ -48,12 +48,17 @@ class ProjectsController extends \BaseController {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param Project $project
+	 *
 	 * @return Response
 	 */
-	public function show($id)
+	public function showProject(Project $project)
 	{
-		//
+		$project->load('user');
+		$this->data['project'] = $project;
+		$this->data['user'] = $project->user;
+
+		return View::make('users.projects.show', $this->data);
 	}
 
 
