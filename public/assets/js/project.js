@@ -58,9 +58,9 @@ function CommentsController($scope, $http, $interval){
 
         $scope.getComments();
 
-    }, 500);
+    }, 1000);
 
-    //$scope.getComments();
+    $scope.getComments();
 
     $scope.postComment = function(){
         if(this.comment){
