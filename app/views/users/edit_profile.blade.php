@@ -5,7 +5,6 @@
     {{ link_css('assets/users/css/edit.css') }}
     {{ link_css('assets/css/text-list.css') }}
     {{ link_css('assets/css/footer-infinity.css') }}
-    {{ link_css('assets/css/footer-infinity.css') }}
 @stop
 
 @section('footer')

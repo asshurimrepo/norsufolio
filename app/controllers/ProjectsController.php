@@ -56,16 +56,20 @@
 		{
 			$project->load( 'user' );
 
-			$up = null;
+			$up       = null;
+			$followed = null;
 
-			if(Auth::check()){
-				$up = $project->ups()->where('user_id', Auth::user()->id)->first();
+			if ( Auth::check() )
+			{
+				$up       = $project->ups()->where( 'user_id', Auth::user()->id )->first();
+				$followed = $project->user->followers()->where( 'followee_id', Auth::user()->id )->first();
 			}
 
-			$this->data['project'] = $project;
-			$this->data['user']    = $project->user;
-			$this->data['title']   = $project->name;
-			$this->data['up']      = $up;
+			$this->data['project']  = $project;
+			$this->data['user']     = $project->user;
+			$this->data['title']    = $project->name;
+			$this->data['up']       = $up;
+			$this->data['followed'] = $followed;
 
 			$project->views += 1;
 			$project->update();

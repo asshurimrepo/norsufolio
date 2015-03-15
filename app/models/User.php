@@ -109,4 +109,14 @@
 		{
 			return $this->projects()->where('id', '!=', $current_project_id)->limit($limit)->orderBy(DB::raw('RAND()'))->get();
 		}
+
+		public function following()
+		{
+			return $this->hasMany('Follow', 'followee_id');
+		}
+
+		public function followers()
+		{
+			return $this->hasMany('Follow', 'followed_id');
+		}
 	}

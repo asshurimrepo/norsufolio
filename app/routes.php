@@ -112,6 +112,26 @@
 			'as'   => 'project.up',
 			'uses' => 'ProjectsController@upProject'
 		]);
+
+		/*
+		 * @route follow-user/{user_id}
+		 * @name user.follow
+		 * @uses UserController@follow
+		 * */
+		Route::post('follow-user/{user}', [
+		    'as'   => 'user.follow',
+		    'uses' => 'UserController@follow'
+		]);
+
+		/*
+		 * @route unfollow-user/{user}
+		 * @name user.unfollow
+		 * @uses UserController@unfollow
+		 * */
+		Route::post('unfollow-user/{user}', [
+		    'as'   => 'user.unfollow',
+		    'uses' => 'UserController@unfollow'
+		]);
 	});
 
 	Route::group( [ 'before' => '' ], function ()

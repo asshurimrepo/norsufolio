@@ -127,5 +127,17 @@
 
 		}
 
+		public function follow( User $user )
+		{
+			$user->followers()->create( [ 'followee_id' => Auth::user()->id ] );
+
+			return $user;
+		}
+
+		public function unfollow( User $user )
+		{
+			$user->followers()->where('followee_id', Auth::user()->id)->delete();
+		}
+
 
 	}

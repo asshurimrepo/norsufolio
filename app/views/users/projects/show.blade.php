@@ -2,6 +2,8 @@
 
 @section('header')
     <meta name="up_project" content="{{ route('project.up',['']) }}"/>
+    <meta name="user_follow" content="{{ route('user.follow',['']) }}"/>
+    <meta name="user_unfollow" content="{{ route('user.unfollow',['']) }}"/>
 
     @parent
     {{--{{ link_css('assets/users/css/edit.css') }}--}}
@@ -35,6 +37,7 @@
     <div id="project-container-wrapper" ng-controller="ProjectController">
 
         <span ng-init='project = {{ json_encode($project) }}'></span>
+        <span ng-init='followed = {{ json_encode($followed) }}'></span>
 
         <div id="content-container" class="grid-site cfix">
             <div id="project-container" class="cfix">
@@ -68,19 +71,24 @@
                                 </div>
                                 <!-- #owner-info --></div>
                             <!-- /#owner-icon-info -->
-                            <div id="owner-buttons-container" class="clear">
-                                <div class=" js-action-follow-user follow-button-container">
-                                    <a class="form-button js-form-button-follow form-button-follow form-button-large form-button-default form-button-left-icon form-button-icon-follow">Follow</a>
-                                    <a class="form-button form-button-following form-button-large form-button-light-and-grey form-button-left-icon form-button-icon-following">Following</a>
-                                    <a class="form-button js-form-button-unfollow form-button-unfollow form-button-large form-button-red form-button-left-icon form-button-icon-unfollow">Unfollow&nbsp;</a>
-                                </div>
+                            @if(Auth::check() && Auth::user()->id != $project->user->id)
+                                <div id="owner-buttons-container" class="clear">
+                                    <div class="js-action-follow-user follow-button-container">
+                                        <a ng-hide="followed" ng-click="follow()" class="form-button follow js-form-button-follow form-button-follow form-button-large form-button-default form-button-left-icon form-button-icon-follow">Follow</a>
 
-                            </div>
+                                        <div ng-show="followed" class="follow-unfollow" ng-mouseover="showUnfollow(true)" ng-mouseleave="showUnfollow(false)">
+                                            <a ng-hide="showUnfollowBtn" style="display: block" class="form-button following form-button-large form-button-light-and-grey form-button-left-icon form-button-icon-following">Following</a>
+                                            <a ng-show="showUnfollowBtn" style="display: block" ng-click="unfollow()" class="form-button unfollow js-form-button-unfollow form-button-unfollow form-button-large form-button-red form-button-left-icon form-button-icon-unfollow">Unfollow&nbsp;</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
                     <!-- secondary actions -->
-                    <div class="sidebar-block sidebar-actions">
+                    <div class="sidebar-block sidebar-actions hide">
                         <a class="sidebar-action js-action-message-user" data-contact_id="3559859"
                            data-contact_name="Hiroyuki Izutsu"> <span
                                     class="beicons-pre beicons-pre-mail project-icon-right project-icon-right-arrow">Message Creative</span></a>
