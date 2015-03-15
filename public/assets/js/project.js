@@ -3,7 +3,9 @@ function ProjectController($scope, $http) {
     $scope.api = {
         'up': $('meta[name=up_project]').prop('content'),
         'follow': $('meta[name=user_follow]').prop('content'),
-        'unfollow': $('meta[name=user_unfollow]').prop('content')
+        'unfollow': $('meta[name=user_unfollow]').prop('content'),
+        'comment': $('meta[name=user_comment]').prop('content'),
+        'comments': $('meta[name=comments]').prop('content')
     };
 
     $scope.appreciated = false;
@@ -37,4 +39,36 @@ function ProjectController($scope, $http) {
         $scope.showUnfollowBtn = bool;
     };
 
+}
+
+
+
+function CommentsController($scope, $http){
+
+    $scope.comments = [];
+
+    $scope.getComments = function(){
+        $http.get($scope.$parent.api.comments + '/' + $scope.$parent.project.id).success(function(data){
+            $scope.comments = data;
+        });
+    };
+
+    $scope.getComments();
+
+    $scope.postComment = function(){
+        if(this.comment){
+            $scope.sending = true;
+            $scope.comment_item = {
+                project_id: $scope.$parent.project.id,
+                comment: this.comment
+            };
+
+            $http.post($scope.$parent.api.comment +'/'+ $scope.comment_item.project_id, $scope.comment_item)
+                .success(function(){
+                    $scope.comment = '';
+                    $scope.sending = false;
+                    $scope.getComments();
+                });
+        }
+    }
 }

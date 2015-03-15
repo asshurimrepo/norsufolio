@@ -4,6 +4,8 @@
     <meta name="up_project" content="{{ route('project.up',['']) }}"/>
     <meta name="user_follow" content="{{ route('user.follow',['']) }}"/>
     <meta name="user_unfollow" content="{{ route('user.unfollow',['']) }}"/>
+    <meta name="user_comment" content="{{ route('user.comment',['']) }}"/>
+    <meta name="comments" content="{{ route('project.comments',['']) }}"/>
 
     @parent
     {{--{{ link_css('assets/users/css/edit.css') }}--}}
@@ -281,11 +283,15 @@
                                 All Projects</a></div>
                     </div>
                     <!-- #project-footer -->
+
+                    @include('ui._comment_box')
                 </div>
 
 
             </div>
             <!-- #project-main -->
+
+
 
         </div>
         <!-- #project-container -->

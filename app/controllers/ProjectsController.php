@@ -83,4 +83,19 @@
 			return $project->ups()->create( [ 'user_id' => Auth::user()->id ] );
 		}
 
+		public function comments(Project $project)
+		{
+			$comments =  $project->comments()->orderBy('id', 'desc')->get();
+			$comments->load('user');
+			return $comments;
+		}
+
+		public function postComment( Project $project )
+		{
+			$input = Input::all();
+			$input['user_id'] = Auth::user()->id;
+
+			return $project->comments()->create($input);
+		}
+
 	}

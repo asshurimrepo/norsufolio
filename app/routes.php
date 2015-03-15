@@ -134,6 +134,32 @@
 		]);
 	});
 
+	/*
+		 * @route project-comments
+		 * @name project.comments
+		 * @uses ProjectsController@comments
+		 * */
+	Route::get( 'project-comments/{project_id}', [
+		'as'   => 'project.comments',
+		'uses' => 'ProjectsController@comments'
+	] );
+
+	Route::group( [ 'before' => 'auth' ], function ()
+	{
+
+
+		/*
+		 * @route user-comment/{project_id}
+		 * @name user.comment
+		 * @uses ProjectsController@postComment
+		 * */
+		Route::post('user-comment/{project_id}', [
+		    'as'   => 'user.comment',
+		    'uses' => 'ProjectsController@postComment'
+		]);
+
+	});
+
 	Route::group( [ 'before' => '' ], function ()
 	{
 

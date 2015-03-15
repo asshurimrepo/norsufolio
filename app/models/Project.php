@@ -18,6 +18,11 @@ class Project extends \Eloquent {
 		return $this->hasMany('Up');
 	}
 
+	public function comments()
+	{
+		return $this->hasMany('Comment');
+	}
+
 	public function upsCount()
 	{
 		return $this->ups()->count();
