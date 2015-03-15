@@ -49,6 +49,11 @@
 			return nl2br( $this->profile->about_me );
 		}
 
+		public function getAvatarAttribute( $value )
+		{
+			return $this->imageUrl();
+		}
+
 		public function imageUrl()
 		{
 			if($this->avatarExists()){
