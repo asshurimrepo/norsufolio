@@ -13,6 +13,8 @@
 
 		protected $with = [ 'profile' ];
 
+		protected $appends = ['avatarUrl'];
+
 		/**
 		 * The database table used by the model.
 		 *
@@ -49,7 +51,7 @@
 			return nl2br( $this->profile->about_me );
 		}
 
-		public function getAvatarAttribute( $value )
+		public function getAvatarUrlAttribute( )
 		{
 			return $this->imageUrl();
 		}

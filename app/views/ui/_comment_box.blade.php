@@ -51,7 +51,7 @@
                         ng-repeat="comment in comments">
                         <a class="comment-user-image-link left" href="#">
                             <img class="comment-user-image js-mini-profile"
-                                 ng-src="@{{ comment.user.avatar }}" style="max-width: 50px">
+                                 ng-src="@{{ comment.user.avatarUrl }}" style="max-width: 50px">
                         </a>
 
                         <div class="comment-text-container left relative">
