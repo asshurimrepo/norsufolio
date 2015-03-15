@@ -71,6 +71,8 @@
 			$this->data['up']       = $up;
 			$this->data['followed'] = $followed;
 
+
+
 			$project->views += 1;
 			$project->update();
 

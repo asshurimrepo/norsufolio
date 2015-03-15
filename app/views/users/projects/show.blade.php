@@ -38,8 +38,8 @@
 @section('binder')
     <div id="project-container-wrapper" ng-controller="ProjectController">
 
-        <span ng-init='project = {{ json_encode($project) }}'></span>
-        <span ng-init='followed = {{ json_encode($followed) }}'></span>
+        <span ng-init='project = {{ str_replace(["'"], "", json_encode($project)) }}'></span>
+        <span ng-init='followed = {{ str_replace(["'"], "", json_encode($followed)) }}'></span>
 
         <div id="content-container" class="grid-site cfix">
             <div id="project-container" class="cfix">
