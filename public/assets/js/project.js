@@ -43,7 +43,7 @@ function ProjectController($scope, $http) {
 
 
 
-function CommentsController($scope, $http){
+function CommentsController($scope, $http, $interval){
 
     $scope.comments = [];
 
@@ -53,7 +53,14 @@ function CommentsController($scope, $http){
         });
     };
 
-    $scope.getComments();
+
+    $interval(function(){
+
+        $scope.getComments();
+
+    }, 500);
+
+    //$scope.getComments();
 
     $scope.postComment = function(){
         if(this.comment){
