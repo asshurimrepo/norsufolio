@@ -8,11 +8,11 @@
 
     <div class="cover-info-stats">
         <div class="cover-info">
-            <div class="cover-name"><a href="#" class="projectName cover-name-link">{{ $project->name }}</a></div>
+            <div class="cover-name"><a href="{{ route('project.show', $project->id) }}" class="projectName cover-name-link">{{ $project->name }}</a></div>
             <div class="cover-by-wrap">
                 <div class="cover-by">by</div>
                 <div class="cover-by-link ">
-                    <a class="text-ellipsis single-owner-link" href="#">
+                    <a class="text-ellipsis single-owner-link" href="{{ route('user.show', $project->user->id) }}">
                         <!--this must touch to avoid extra space--><span
                                 class="js-mini-profile">{{ $project->user->name }}</span> </a>
 
