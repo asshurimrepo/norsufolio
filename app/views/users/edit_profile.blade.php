@@ -99,6 +99,15 @@
                                 </div>
                             </div>
                             <div class="form-item form-item-text be-placeholder" id="occupation-container"><label
+                                        for="occupation">Nickname</label> <input name="name" type="text"
+                                                                                class="form-text form-text-normal"
+                                                                                id="occupation"
+                                                                                placeholder=""
+                                                                                required
+                                                                                value="{{ $current_user->name }}"
+                                                                                >
+                            </div>
+                            <div class="form-item form-item-text be-placeholder" id="occupation-container"><label
                                         for="occupation">College</label> <input name="college" type="text"
                                                                                    class="form-text form-text-normal validate[optional,Generic]"
                                                                                    id="occupation"
