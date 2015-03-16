@@ -54,7 +54,7 @@
 
                         <div class="sidebar-content cfix">
                             <div id="owner-icon-info" class="cfix">
-                                <div id="owner-icon" class="user-img-50 left "><a href="#">
+                                <div id="owner-icon" class="user-img-50 left "><a href="{{ route('user.show', $project->user->id) }}">
                                         <img class="js-mini-profile"
                                              style="max-width: 50px;"
                                              src="{{ $project->user->imageUrl() }}"></a>
@@ -62,7 +62,7 @@
                                 <div id="owner-info" class="left">
                                     <div id="owners" class="cfix">
                                         <a id="owner" class="text-ellipsis"
-                                           href="#"><span
+                                           href="{{ route('user.show', $project->user->id) }}"><span
                                                     class="js-mini-profile"
                                                     data-id="3559859">{{ $user->fullName() }}</span></a>
                                     </div>
@@ -158,14 +158,14 @@
 
                                 <div class="sidebar-content cfix">
                                     <div id="owner-icon-info" class="cfix">
-                                        <div id="owner-icon" class="user-img-50 left "><a href="#"><img
+                                        <div id="owner-icon" class="user-img-50 left "><a href="{{ route('user.show', $project->user->id) }}"><img
                                                         class="js-mini-profile"
                                                         src="{{ $user->imageUrl() }}"></a>
                                         </div>
 
                                         <div id="owner-info" class="left">
                                             <div id="owners" class="cfix"><a id="owner" class="text-ellipsis"
-                                                                             href="#"><span
+                                                                             href="{{ route('user.show', $project->user->id) }}"><span
                                                             class="js-mini-profile"
                                                             data-id="3559859">{{ $user->fullName() }}</span></a>
                                             </div>
@@ -234,12 +234,12 @@
                         <div id="footer-owners-and-follow" class="dark-background cfix">
                             <div id="footer-owners" class="cfix">
                                 <div class="user-image-container user-img-78 margin-right-15 left"><a
-                                            href="#"><img
+                                            href="{{ route('user.show', $project->user->id) }}"><img
                                                 class="user-image user-img-78 js-mini-profile"
                                                 src="{{ $user->imageUrl() }}"></a></div>
                                 <div class="user-info-container relative left cfix"><a
                                             class="owner-name text-ellipsis light-link" user_id="3559859"
-                                            href="#"><span class="js-mini-profile">{{ $user->fullName() }}</span>'s
+                                            href="{{ route('user.show', $project->user->id) }}"><span class="js-mini-profile">{{ $user->fullName() }}</span>'s
                                         Portfolio</a><br><a class="owner-location clear-left"
                                                             href="#">{{ $user->address }}</a>
 
@@ -279,7 +279,7 @@
                                 @endforeach
 
                             </ul>
-                            <a id="view-all-projects" class="ui-corner beicons-pre beicons-pre-grid hide" href="#">View
+                            <a id="view-all-projects" class="ui-corner beicons-pre beicons-pre-grid" href="{{ route('user.show', $project->user->id) }}">View
                                 All Projects</a></div>
                     </div>
                     <!-- #project-footer -->

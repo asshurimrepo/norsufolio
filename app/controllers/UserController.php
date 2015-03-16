@@ -52,12 +52,20 @@
 		/**
 		 * Display the specified resource.
 		 *
-		 * @param  int $id
+		 * @param User $user
 		 *
 		 * @return Response
+		 * @internal param int $id
+		 *
 		 */
-		public function show( $id )
+		public function show( User $user )
 		{
+			$user->load('projects');
+			$this->data['title'] = $user->fullName();
+			$this->data['current_user'] = $user;
+			$this->data['projects'] = $user->projects;
+
+			return View::make( 'users.index', $this->data );
 		}
 
 
@@ -104,17 +112,6 @@
 		}
 
 
-		/**
-		 * Remove the specified resource from storage.
-		 *
-		 * @param  int $id
-		 *
-		 * @return Response
-		 */
-		public function destroy( $id )
-		{
-			//
-		}
 
 
 		/**
@@ -138,6 +135,8 @@
 		{
 			$user->followers()->where('followee_id', Auth::user()->id)->delete();
 		}
+
+
 
 
 	}
