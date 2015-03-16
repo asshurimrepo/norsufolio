@@ -15,10 +15,7 @@
         <div class="collapse navbar-collapse" id="navigation">
             <div class="row">
                 <div class="col-md-2">
-                    <ul class="nav navbar-nav text-center">
-                        <li><a href="#"><i class="fa fa-exclamation-circle"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i></a> </li>
-                    </ul>
+
                 </div>
                 <div class="col-md-6">
                     <ul class="set-center nav navbar-nav text-center">
